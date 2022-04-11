@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493CA7B928042DEA00664895 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493CA7B828042DEA00664895 /* TasksViewController.swift */; };
 		497E062F28035622007B43D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497E062E28035622007B43D3 /* AppDelegate.swift */; };
 		497E063128035622007B43D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497E063028035622007B43D3 /* SceneDelegate.swift */; };
-		497E063328035622007B43D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497E063228035622007B43D3 /* ViewController.swift */; };
+		497E063328035622007B43D3 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497E063228035622007B43D3 /* CategoryViewController.swift */; };
 		497E063628035622007B43D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497E063428035622007B43D3 /* Main.storyboard */; };
 		497E063828035623007B43D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497E063728035623007B43D3 /* Assets.xcassets */; };
 		497E063B28035623007B43D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497E063928035623007B43D3 /* LaunchScreen.storyboard */; };
@@ -18,10 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		493CA7B828042DEA00664895 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		497E062B28035622007B43D3 /* Todonote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todonote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		497E062E28035622007B43D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		497E063028035622007B43D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		497E063228035622007B43D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		497E063228035622007B43D3 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		497E063528035622007B43D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		497E063728035623007B43D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		497E063A28035623007B43D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,9 +85,10 @@
 		497E0643280356A2007B43D3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				497E063228035622007B43D3 /* ViewController.swift */,
+				497E063228035622007B43D3 /* CategoryViewController.swift */,
 				497E0647280357E8007B43D3 /* AddTaskViewController.swift */,
 				497E0649280357FA007B43D3 /* TaskDetailViewController.swift */,
+				493CA7B828042DEA00664895 /* TasksViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,11 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				497E063328035622007B43D3 /* ViewController.swift in Sources */,
+				497E063328035622007B43D3 /* CategoryViewController.swift in Sources */,
 				497E0648280357E8007B43D3 /* AddTaskViewController.swift in Sources */,
 				497E062F28035622007B43D3 /* AppDelegate.swift in Sources */,
 				497E063128035622007B43D3 /* SceneDelegate.swift in Sources */,
 				497E064A280357FA007B43D3 /* TaskDetailViewController.swift in Sources */,
+				493CA7B928042DEA00664895 /* TasksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
