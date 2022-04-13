@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TaskDetailViewController.swift
 //  Todonote
 //
 //  Created by Kirill Sytkov on 10.04.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
+class TaskDetailViewController: UIViewController {
 
     //MARK: - IBOutlets
     
@@ -27,10 +27,12 @@ class CategoryViewController: UIViewController {
     }
     
     //MARK: - IBActions
+    @IBAction func updateButtonPressed(_ sender: UIButton) {
+    }
     
     
     //MARK: - flow func
     
     
-}
 
+}
