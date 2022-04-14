@@ -18,7 +18,6 @@ class CategoryViewController: UIViewController {
     
     //MARK: - vars/lets
     var categories: Results<Category>?
-    var filteredCategories: Results<Category>?
     let realm = try! Realm()
     
     //MARK: - lyfecycle
@@ -65,7 +64,7 @@ class CategoryViewController: UIViewController {
 
     //MARK: - flow func
     private func updateUI() {
-        topView.layer.cornerRadius = 10
+        topView.layer.cornerRadius = 20
     }
 
     
@@ -78,13 +77,11 @@ class CategoryViewController: UIViewController {
             debugPrint(error)
         }
         
-        filteredCategories = categories
         self.tableView.reloadData()
     }
     
     private func loadCategory() {
         categories = realm.objects(Category.self)
-        filteredCategories = categories
         self.tableView.reloadData()
     }
     
@@ -98,35 +95,35 @@ class CategoryViewController: UIViewController {
         }
     }
     private func searchCategory(text: String) {
-        if text == "" {
-            filteredCategories = categories
-        } else {
-            filteredCategories = categories?.where({ categories in
+        if text.count != 0 {
+            categories = categories?.where({ categories in
                 categories.title.starts(with: text)
             })
+        } else {
+            loadCategory()
         }
         self.tableView.reloadData()
+
     }
+    
     
 }
 //MARK: - Extensions
 
 extension CategoryViewController: UITableViewDelegate,  UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        guard let filteredCategories = filteredCategories else { return categories?.count ?? 1}
-        return filteredCategories.count
+
+        return categories?.count ?? 0
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as? CategoryTableViewCell else { return UITableViewCell() }
-        
-        if let filterCategory = filteredCategories {
-            cell.configure(category: filterCategory[indexPath.row])
-        }
 
+        if let category = categories {
+            cell.configure(category: category[indexPath.row])
+        }
         return cell
     }
     
@@ -135,6 +132,8 @@ extension CategoryViewController: UITableViewDelegate,  UITableViewDataSource {
         guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "TasksViewController") as? TasksViewController
         else { return }
         
+        controller.selectedCategory = categories?[indexPath.row]
+        controller.categoryLabel = categories![indexPath.row].title
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -156,7 +155,11 @@ extension CategoryViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             searchCategory(text: searchText)
     }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchBar.text?.count == 0 {
+            loadCategory()
+        }
         self.searchBar.endEditing(true)
     }
     

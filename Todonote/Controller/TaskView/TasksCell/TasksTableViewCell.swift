@@ -13,7 +13,13 @@ class TasksTableViewCell: UITableViewCell {
     @IBOutlet weak var dateTitle: UILabel!
     
     func configure(task: Item) {
+        let date = task.date
+        let formater = DateFormatter()
+        formater.dateFormat = "HH:mm E, d MMM"
+        let string = formater.string(from: date)
+        
         taskTitle.text = task.title
+        dateTitle.text = string
     }
 
 }

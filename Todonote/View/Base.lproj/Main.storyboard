@@ -22,17 +22,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UnT-91-IYM" userLabel="TopView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="179"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="236"/>
                                         <subviews>
                                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="p0G-Dq-gVU">
-                                                <rect key="frame" x="20" y="123" width="374" height="51"/>
+                                                <rect key="frame" x="20" y="180" width="374" height="51"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="barTintColor" name="WhitePallete"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </searchBar>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BI-1q-dkk">
-                                                <rect key="frame" x="20" y="97.5" width="374" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="20" y="152.5" width="374" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <color key="textColor" name="WhitePallete"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -48,22 +48,22 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2y-HV-11f" userLabel="BottomView">
-                                        <rect key="frame" x="0.0" y="179" width="414" height="717"/>
+                                        <rect key="frame" x="0.0" y="236" width="414" height="660"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IWP-Di-aMB">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IWP-Di-aMB">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
+                                                <color key="separatorColor" name="DarkGrayPallete"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CategoryTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryTableViewCell" id="sBN-Jx-mDz" customClass="CategoryTableViewCell" customModule="Todonote" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="44.5" width="414" height="49"/>
+                                                        <rect key="frame" x="20" y="49.5" width="374" height="51.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sBN-Jx-mDz" id="kZR-jW-Wkx">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="51.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEJ-4X-h01">
-                                                                    <rect key="frame" x="20" y="11" width="374" height="27"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                                    <rect key="frame" x="20" y="11" width="334" height="29.5"/>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                                                     <color key="textColor" name="DarkGrayPallete"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -82,7 +82,7 @@
                                                 </prototypes>
                                             </tableView>
                                         </subviews>
-                                        <color key="backgroundColor" name="WhitePallete"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="IWP-Di-aMB" firstAttribute="top" secondItem="X2y-HV-11f" secondAttribute="top" id="4uc-1f-73h"/>
                                             <constraint firstItem="IWP-Di-aMB" firstAttribute="leading" secondItem="X2y-HV-11f" secondAttribute="leading" id="GIE-ol-dt5"/>
@@ -91,12 +91,12 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" name="WhitePallete"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="UnT-91-IYM" secondAttribute="trailing" id="8w6-yY-fSU"/>
                                     <constraint firstItem="UnT-91-IYM" firstAttribute="leading" secondItem="adj-so-Rpi" secondAttribute="leading" id="CVe-1m-Y6P"/>
                                     <constraint firstAttribute="bottom" secondItem="X2y-HV-11f" secondAttribute="bottom" id="RuC-XE-ygs"/>
-                                    <constraint firstItem="X2y-HV-11f" firstAttribute="height" secondItem="UnT-91-IYM" secondAttribute="height" multiplier="4" id="TxZ-l2-ni5"/>
+                                    <constraint firstItem="X2y-HV-11f" firstAttribute="height" secondItem="UnT-91-IYM" secondAttribute="height" multiplier="2.8" id="TxZ-l2-ni5"/>
                                     <constraint firstItem="UnT-91-IYM" firstAttribute="top" secondItem="adj-so-Rpi" secondAttribute="top" id="VU4-j6-WE2"/>
                                     <constraint firstItem="X2y-HV-11f" firstAttribute="leading" secondItem="adj-so-Rpi" secondAttribute="leading" id="cKa-hJ-ZLe"/>
                                     <constraint firstAttribute="trailing" secondItem="X2y-HV-11f" secondAttribute="trailing" id="z6L-Tl-K8E"/>
@@ -104,7 +104,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="WhitePallete"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="adj-so-Rpi" secondAttribute="trailing" id="Bzc-ih-uFg"/>
                             <constraint firstAttribute="bottom" secondItem="adj-so-Rpi" secondAttribute="bottom" id="VDS-1k-Odk"/>
@@ -113,9 +113,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Todonote" id="soS-CK-thG">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.3.horizontal" catalog="system" id="9bN-I6-H5B">
-                            <color key="tintColor" systemColor="tintColor"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cyf-hk-Kww">
                             <color key="tintColor" systemColor="tintColor"/>
                             <connections>
@@ -149,10 +146,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s61-dg-93U" userLabel="TopView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="179"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocf-Q1-Cbt">
-                                                <rect key="frame" x="10" y="136" width="394" height="23"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <color key="textColor" name="WhitePallete"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ocf-Q1-Cbt">
+                                                <rect key="frame" x="10" y="126.5" width="394" height="32.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
+                                                <color key="textColor" name="GreenPallete"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -166,25 +163,25 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jV4-IV-qOG" userLabel="BottomView">
                                         <rect key="frame" x="0.0" y="179" width="414" height="717"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="U4G-RM-97X">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="U4G-RM-97X">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="separatorColor" name="DarkGrayPallete"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TasksTableViewCell" id="PRy-eI-Wb2" customClass="TasksTableViewCell" customModule="Todonote" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="44.5" width="414" height="39.5"/>
+                                                        <rect key="frame" x="20" y="49.5" width="374" height="39.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PRy-eI-Wb2" id="ZAg-lM-bbl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="39.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="39.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNc-Z3-5lZ">
-                                                                    <rect key="frame" x="30" y="0.0" width="260" height="39.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do something" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNc-Z3-5lZ">
+                                                                    <rect key="frame" x="30" y="0.0" width="216" height="39.5"/>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                                                     <color key="textColor" name="DarkGrayPallete"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="On1-em-OHy">
-                                                                    <rect key="frame" x="290" y="11" width="104" height="17.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="On1-em-OHy">
+                                                                    <rect key="frame" x="246" y="11" width="108" height="17.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" name="LigntGrayPallete"/>
                                                                     <nil key="highlightedColor"/>
@@ -194,7 +191,7 @@
                                                                 <constraint firstAttribute="trailingMargin" secondItem="On1-em-OHy" secondAttribute="trailing" id="M63-k4-EZp"/>
                                                                 <constraint firstItem="On1-em-OHy" firstAttribute="top" secondItem="ZAg-lM-bbl" secondAttribute="topMargin" id="U76-Yl-Ytc"/>
                                                                 <constraint firstItem="RNc-Z3-5lZ" firstAttribute="leading" secondItem="ZAg-lM-bbl" secondAttribute="leading" constant="30" id="Vqv-iB-cEn"/>
-                                                                <constraint firstItem="RNc-Z3-5lZ" firstAttribute="width" secondItem="On1-em-OHy" secondAttribute="width" multiplier="2.5" id="W0O-Qc-Gts"/>
+                                                                <constraint firstItem="RNc-Z3-5lZ" firstAttribute="width" secondItem="On1-em-OHy" secondAttribute="width" multiplier="2" id="W0O-Qc-Gts"/>
                                                                 <constraint firstItem="RNc-Z3-5lZ" firstAttribute="top" secondItem="ZAg-lM-bbl" secondAttribute="top" id="X3L-yL-Lw8"/>
                                                                 <constraint firstAttribute="bottomMargin" secondItem="On1-em-OHy" secondAttribute="bottom" id="dUs-WD-2vv"/>
                                                                 <constraint firstItem="On1-em-OHy" firstAttribute="leading" secondItem="RNc-Z3-5lZ" secondAttribute="trailing" id="fRB-95-e6M"/>
@@ -269,16 +266,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1oE-h4-KHd" userLabel="TopView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDc-yi-9G6">
-                                                <rect key="frame" x="20" y="95.5" width="374" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="20" y="147.5" width="374" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <color key="textColor" name="WhitePallete"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4GA-P3-lIi">
-                                                <rect key="frame" x="10" y="126" width="394" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4GA-P3-lIi">
+                                                <rect key="frame" x="40" y="180" width="334" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -286,51 +283,48 @@
                                         <color key="backgroundColor" name="DarkGrayPallete"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="PDc-yi-9G6" secondAttribute="trailing" constant="20" id="4F4-a2-YP8"/>
-                                            <constraint firstItem="4GA-P3-lIi" firstAttribute="leading" secondItem="1oE-h4-KHd" secondAttribute="leading" constant="10" id="CUB-dW-Zvy"/>
+                                            <constraint firstItem="4GA-P3-lIi" firstAttribute="leading" secondItem="1oE-h4-KHd" secondAttribute="leading" constant="40" id="CUB-dW-Zvy"/>
                                             <constraint firstItem="PDc-yi-9G6" firstAttribute="leading" secondItem="1oE-h4-KHd" secondAttribute="leading" constant="20" id="NRh-3X-v9v"/>
                                             <constraint firstAttribute="bottom" secondItem="4GA-P3-lIi" secondAttribute="bottom" constant="10" id="dVF-fw-aFq"/>
                                             <constraint firstItem="4GA-P3-lIi" firstAttribute="top" secondItem="PDc-yi-9G6" secondAttribute="bottom" constant="10" id="t90-eb-DxM"/>
-                                            <constraint firstAttribute="trailing" secondItem="4GA-P3-lIi" secondAttribute="trailing" constant="10" id="upW-rC-NSO"/>
+                                            <constraint firstAttribute="trailing" secondItem="4GA-P3-lIi" secondAttribute="trailing" constant="40" id="upW-rC-NSO"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NH0-et-V4y" userLabel="BottomView">
-                                        <rect key="frame" x="0.0" y="171" width="414" height="681"/>
+                                        <rect key="frame" x="0.0" y="225" width="414" height="627"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nig-3m-HjQ">
-                                                <rect key="frame" x="20" y="40" width="374" height="641"/>
+                                                <rect key="frame" x="20" y="40" width="374" height="587"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efY-y9-fAQ">
-                                                        <rect key="frame" x="20" y="0.0" width="334" height="23"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="efY-y9-fAQ">
+                                                        <rect key="frame" x="20" y="0.0" width="334" height="25"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
                                                         <color key="textColor" name="LigntGrayPallete"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="GHX-ai-b2L">
-                                                        <rect key="frame" x="20" y="43" width="334" height="230"/>
+                                                        <rect key="frame" x="20" y="45" width="334" height="201"/>
                                                     </datePicker>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVf-6U-k1J">
-                                                        <rect key="frame" x="20" y="293" width="334" height="23"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gVf-6U-k1J">
+                                                        <rect key="frame" x="20" y="266" width="334" height="25"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
                                                         <color key="textColor" name="LigntGrayPallete"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Write your important note..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UuK-eA-ENS">
-                                                        <rect key="frame" x="20" y="336" width="334" height="230"/>
+                                                        <rect key="frame" x="20" y="311" width="334" height="201"/>
                                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <action selector="addTaskNote:" destination="b1Q-NN-9gu" eventType="editingDidEnd" id="gSU-JX-iTk"/>
-                                                        </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nc-Nb-32y">
-                                                        <rect key="frame" x="137" y="586" width="100" height="55"/>
+                                                        <rect key="frame" x="137" y="532" width="100" height="55"/>
                                                         <color key="backgroundColor" name="GreenPallete"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="YPd-mO-pTw"/>
                                                             <constraint firstAttribute="height" constant="55" id="cqc-1t-Ups"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="SAVE">
                                                             <color key="titleColor" name="WhitePallete"/>
@@ -340,11 +334,11 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="gVf-6U-k1J" firstAttribute="leading" secondItem="Nig-3m-HjQ" secondAttribute="leading" constant="20" id="1LQ-Px-ySV"/>
                                                     <constraint firstItem="efY-y9-fAQ" firstAttribute="leading" secondItem="Nig-3m-HjQ" secondAttribute="leading" constant="20" id="AVT-Nr-EsI"/>
                                                     <constraint firstAttribute="trailing" secondItem="GHX-ai-b2L" secondAttribute="trailing" constant="20" id="H49-fC-RfY"/>
-                                                    <constraint firstAttribute="trailing" secondItem="gVf-6U-k1J" secondAttribute="trailing" constant="20" id="fKC-j5-Bb7"/>
                                                     <constraint firstItem="GHX-ai-b2L" firstAttribute="leading" secondItem="Nig-3m-HjQ" secondAttribute="leading" constant="20" id="fsT-hV-3Mj"/>
                                                     <constraint firstItem="UuK-eA-ENS" firstAttribute="width" secondItem="GHX-ai-b2L" secondAttribute="width" id="gUH-B3-D2I"/>
                                                     <constraint firstItem="GHX-ai-b2L" firstAttribute="height" secondItem="UuK-eA-ENS" secondAttribute="height" id="kXq-kx-wW9"/>
@@ -352,7 +346,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="WhitePallete"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Nig-3m-HjQ" secondAttribute="trailing" constant="20" id="MBm-rM-6sV"/>
                                             <constraint firstItem="Nig-3m-HjQ" firstAttribute="top" secondItem="NH0-et-V4y" secondAttribute="top" constant="40" id="hZv-A6-TIi"/>
@@ -365,7 +359,7 @@
                                     <constraint firstAttribute="trailing" secondItem="NH0-et-V4y" secondAttribute="trailing" id="5KI-8S-OhX"/>
                                     <constraint firstAttribute="bottom" secondItem="NH0-et-V4y" secondAttribute="bottom" id="Ckp-LE-I4f"/>
                                     <constraint firstItem="1oE-h4-KHd" firstAttribute="leading" secondItem="H1G-8I-gAk" secondAttribute="leading" id="K8B-UB-8LQ"/>
-                                    <constraint firstItem="NH0-et-V4y" firstAttribute="height" secondItem="1oE-h4-KHd" secondAttribute="height" multiplier="4" id="YkS-ut-xYy"/>
+                                    <constraint firstItem="NH0-et-V4y" firstAttribute="height" secondItem="1oE-h4-KHd" secondAttribute="height" multiplier="2.8" id="YkS-ut-xYy"/>
                                     <constraint firstAttribute="trailing" secondItem="1oE-h4-KHd" secondAttribute="trailing" id="drV-uj-lKo"/>
                                     <constraint firstItem="NH0-et-V4y" firstAttribute="leading" secondItem="H1G-8I-gAk" secondAttribute="leading" id="nXE-IU-CNY"/>
                                     <constraint firstItem="1oE-h4-KHd" firstAttribute="top" secondItem="H1G-8I-gAk" secondAttribute="top" id="x0Y-0B-grB"/>
@@ -385,14 +379,16 @@
                     <connections>
                         <outlet property="datePicker" destination="GHX-ai-b2L" id="fGs-44-JlS"/>
                         <outlet property="noteTask" destination="UuK-eA-ENS" id="coW-ew-O2f"/>
+                        <outlet property="saveButton" destination="1nc-Nb-32y" id="O8n-IW-L3Q"/>
                         <outlet property="titleTask" destination="4GA-P3-lIi" id="Eio-OB-r9g"/>
+                        <outlet property="topView" destination="1oE-h4-KHd" id="IOQ-N8-3Kn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmO-3l-00V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3357.971014492754" y="-188.16964285714286"/>
         </scene>
-        <!--Task Detail View Controller-->
+        <!--Task Detail-->
         <scene sceneID="tBC-Rp-k9t">
             <objects>
                 <viewController storyboardIdentifier="TaskDetailViewController" id="K01-ov-ILt" customClass="TaskDetailViewController" customModule="Todonote" customModuleProvider="target" sceneMemberID="viewController">
@@ -404,16 +400,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IiN-wi-kHd" userLabel="TopView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYd-Jp-oR1">
-                                                <rect key="frame" x="20" y="95.5" width="374" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="20" y="147.5" width="374" height="22.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <color key="textColor" name="WhitePallete"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KD7-VZ-OXN">
-                                                <rect key="frame" x="10" y="126" width="394" height="34"/>
+                                                <rect key="frame" x="40" y="180" width="334" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -423,47 +419,35 @@
                                             <constraint firstItem="KD7-VZ-OXN" firstAttribute="top" secondItem="tYd-Jp-oR1" secondAttribute="bottom" constant="10" id="LnQ-xr-kBI"/>
                                             <constraint firstItem="tYd-Jp-oR1" firstAttribute="leading" secondItem="IiN-wi-kHd" secondAttribute="leading" constant="20" id="MDe-mq-5rK"/>
                                             <constraint firstAttribute="trailing" secondItem="tYd-Jp-oR1" secondAttribute="trailing" constant="20" id="MWH-eY-PhZ"/>
-                                            <constraint firstItem="KD7-VZ-OXN" firstAttribute="leading" secondItem="IiN-wi-kHd" secondAttribute="leading" constant="10" id="UoE-ly-tph"/>
-                                            <constraint firstAttribute="trailing" secondItem="KD7-VZ-OXN" secondAttribute="trailing" constant="10" id="e3q-Ba-F4D"/>
+                                            <constraint firstItem="KD7-VZ-OXN" firstAttribute="leading" secondItem="IiN-wi-kHd" secondAttribute="leading" constant="40" id="UoE-ly-tph"/>
+                                            <constraint firstAttribute="trailing" secondItem="KD7-VZ-OXN" secondAttribute="trailing" constant="40" id="e3q-Ba-F4D"/>
                                             <constraint firstAttribute="bottom" secondItem="KD7-VZ-OXN" secondAttribute="bottom" constant="10" id="olH-g8-d7w"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5b-Xt-eyS" userLabel="BottomView">
-                                        <rect key="frame" x="0.0" y="171" width="414" height="681"/>
+                                        <rect key="frame" x="0.0" y="225" width="414" height="627"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xz5-Bj-mJT">
-                                                <rect key="frame" x="20" y="40" width="374" height="641"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xz5-Bj-mJT">
+                                                <rect key="frame" x="20" y="40" width="374" height="587"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5p-6M-KlP">
-                                                        <rect key="frame" x="20" y="0.0" width="334" height="0.0"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                                        <color key="textColor" name="LigntGrayPallete"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="khG-HN-VO9">
-                                                        <rect key="frame" x="20" y="20" width="334" height="253"/>
+                                                        <rect key="frame" x="20" y="0.0" width="334" height="376"/>
                                                         <color key="tintColor" name="GreenPallete"/>
                                                     </datePicker>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-OQ-ux3">
-                                                        <rect key="frame" x="20" y="293" width="334" height="0.0"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                                        <color key="textColor" name="LigntGrayPallete"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Write your important note..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WSD-NS-czh">
-                                                        <rect key="frame" x="20" y="313" width="334" height="253"/>
+                                                        <rect key="frame" x="20" y="386" width="334" height="136"/>
                                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwn-jD-o1f">
-                                                        <rect key="frame" x="137" y="586" width="100" height="55"/>
+                                                        <rect key="frame" x="137" y="532" width="100" height="55"/>
                                                         <color key="backgroundColor" name="GreenPallete"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="NUL-wh-suL"/>
                                                             <constraint firstAttribute="height" constant="55" id="nhz-ce-RNT"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="UPDATE">
                                                             <color key="titleColor" name="WhitePallete"/>
@@ -475,17 +459,15 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="WSD-NS-czh" firstAttribute="width" secondItem="khG-HN-VO9" secondAttribute="width" id="8vP-uU-M4s"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ffR-OQ-ux3" secondAttribute="trailing" constant="20" id="BXV-K1-JJa"/>
-                                                    <constraint firstItem="ffR-OQ-ux3" firstAttribute="leading" secondItem="Xz5-Bj-mJT" secondAttribute="leading" constant="20" id="CRi-09-HSS"/>
+                                                    <constraint firstItem="WSD-NS-czh" firstAttribute="height" secondItem="khG-HN-VO9" secondAttribute="height" multiplier="0.360795" id="Eel-kF-4kU"/>
                                                     <constraint firstItem="khG-HN-VO9" firstAttribute="leading" secondItem="Xz5-Bj-mJT" secondAttribute="leading" constant="20" id="O1U-XW-47d"/>
-                                                    <constraint firstItem="J5p-6M-KlP" firstAttribute="leading" secondItem="Xz5-Bj-mJT" secondAttribute="leading" constant="20" id="dIo-aA-QQP"/>
+                                                    <constraint firstItem="khG-HN-VO9" firstAttribute="top" secondItem="Xz5-Bj-mJT" secondAttribute="top" id="cJK-i2-Ofh"/>
                                                     <constraint firstAttribute="trailing" secondItem="khG-HN-VO9" secondAttribute="trailing" constant="20" id="hnj-1J-uJg"/>
-                                                    <constraint firstItem="khG-HN-VO9" firstAttribute="height" secondItem="WSD-NS-czh" secondAttribute="height" id="wvS-87-rOn"/>
-                                                    <constraint firstItem="J5p-6M-KlP" firstAttribute="top" secondItem="Xz5-Bj-mJT" secondAttribute="top" id="zPT-1f-MRh"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Lwn-jD-o1f" secondAttribute="bottom" id="jP4-Kh-4K7"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="WhitePallete"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Xz5-Bj-mJT" secondAttribute="trailing" constant="20" id="5dz-up-L1Z"/>
                                             <constraint firstAttribute="bottom" secondItem="Xz5-Bj-mJT" secondAttribute="bottom" id="CuI-4S-dM9"/>
@@ -498,7 +480,7 @@
                                     <constraint firstAttribute="trailing" secondItem="L5b-Xt-eyS" secondAttribute="trailing" id="GIK-ud-dbx"/>
                                     <constraint firstAttribute="bottom" secondItem="L5b-Xt-eyS" secondAttribute="bottom" id="V3k-rZ-Vzy"/>
                                     <constraint firstItem="L5b-Xt-eyS" firstAttribute="leading" secondItem="RNS-R6-Cqb" secondAttribute="leading" id="Z4D-sl-hCP"/>
-                                    <constraint firstItem="L5b-Xt-eyS" firstAttribute="height" secondItem="IiN-wi-kHd" secondAttribute="height" multiplier="4" id="hfu-yK-9au"/>
+                                    <constraint firstItem="L5b-Xt-eyS" firstAttribute="height" secondItem="IiN-wi-kHd" secondAttribute="height" multiplier="2.8" id="hfu-yK-9au"/>
                                     <constraint firstItem="IiN-wi-kHd" firstAttribute="top" secondItem="RNS-R6-Cqb" secondAttribute="top" id="nk0-OI-YRQ"/>
                                     <constraint firstAttribute="trailing" secondItem="IiN-wi-kHd" secondAttribute="trailing" id="uAm-dg-w3B"/>
                                     <constraint firstItem="IiN-wi-kHd" firstAttribute="leading" secondItem="RNS-R6-Cqb" secondAttribute="leading" id="uZd-6h-uhT"/>
@@ -514,21 +496,32 @@
                             <constraint firstItem="RNS-R6-Cqb" firstAttribute="leading" secondItem="Fb4-LA-oPj" secondAttribute="leading" id="e9b-gO-gRV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7WK-3d-bHy"/>
+                    <navigationItem key="navigationItem" title="Task Detail" id="7WK-3d-bHy"/>
+                    <connections>
+                        <outlet property="taskDate" destination="khG-HN-VO9" id="agu-4K-3Qm"/>
+                        <outlet property="taskNote" destination="WSD-NS-czh" id="xtg-PN-2RB"/>
+                        <outlet property="taskTitle" destination="KD7-VZ-OXN" id="JpW-lr-koq"/>
+                        <outlet property="topView" destination="IiN-wi-kHd" id="mr7-pr-4KK"/>
+                        <outlet property="updateButton" destination="Lwn-jD-o1f" id="t1Y-8F-7oB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRU-x4-Y8A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3386" y="482"/>
+            <point key="canvasLocation" x="3357" y="486"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8dI-Qg-XC9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XoD-hI-spS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qHf-dA-6lh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="qHf-dA-6lh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="GreenPallete"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                             <color key="textColor" name="GreenPallete"/>
                         </textAttributes>
                     </navigationBar>
@@ -546,7 +539,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <namedColor name="DarkGrayPallete">
             <color red="0.13300000131130219" green="0.15700000524520874" blue="0.19200000166893005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
