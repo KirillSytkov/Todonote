@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class CategoryViewController: UIViewController {
 
@@ -17,8 +16,6 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var bottonView: UIView!
     
     //MARK: - vars/lets
-    var categories: Results<Category>?
-    let realm = try! Realm()
     var viewModel = CategoryViewModel()
     
     //MARK: - lyfecycle
