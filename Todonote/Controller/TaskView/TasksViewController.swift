@@ -51,7 +51,7 @@ class TasksViewController: UIViewController {
     
     private func loadTasks() {
 //        tasks = realm.objects(Item.self)
-        tasks = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+        tasks = selectedCategory?.items.sorted(byKeyPath: "date", ascending: true)
         self.tableView.reloadData()
     }
     
@@ -87,6 +87,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         .delete
     }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard let task = tasks else { return }
     

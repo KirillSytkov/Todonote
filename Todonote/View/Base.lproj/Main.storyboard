@@ -50,19 +50,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2y-HV-11f" userLabel="BottomView">
                                         <rect key="frame" x="0.0" y="236" width="414" height="660"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IWP-Di-aMB">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IWP-Di-aMB">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
                                                 <color key="separatorColor" name="DarkGrayPallete"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CategoryTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryTableViewCell" id="sBN-Jx-mDz" customClass="CategoryTableViewCell" customModule="Todonote" customModuleProvider="target">
-                                                        <rect key="frame" x="20" y="49.5" width="374" height="51.5"/>
+                                                        <rect key="frame" x="0.0" y="44.5" width="414" height="51.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sBN-Jx-mDz" id="kZR-jW-Wkx">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="51.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="51.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEJ-4X-h01">
-                                                                    <rect key="frame" x="20" y="11" width="334" height="29.5"/>
+                                                                    <rect key="frame" x="20" y="11" width="374" height="29.5"/>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                                                     <color key="textColor" name="DarkGrayPallete"/>
                                                                     <nil key="highlightedColor"/>
@@ -125,7 +125,7 @@
                         <outlet property="searchBar" destination="p0G-Dq-gVU" id="G9R-ch-me8"/>
                         <outlet property="tableView" destination="IWP-Di-aMB" id="6fo-t8-hwe"/>
                         <outlet property="topView" destination="UnT-91-IYM" id="IAE-1w-fRR"/>
-                        <segue destination="WOT-jE-Nsv" kind="show" id="LXz-5R-xu4"/>
+                        <segue destination="WOT-jE-Nsv" kind="show" identifier="TasksView" id="LXz-5R-xu4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -246,8 +246,8 @@
                         <outlet property="categoryTitle" destination="Ocf-Q1-Cbt" id="gtb-84-3SB"/>
                         <outlet property="tableView" destination="U4G-RM-97X" id="RGH-Mj-xSf"/>
                         <outlet property="topView" destination="s61-dg-93U" id="vsr-Xb-DTY"/>
-                        <segue destination="K01-ov-ILt" kind="show" id="TP7-Bl-YKe"/>
-                        <segue destination="b1Q-NN-9gu" kind="show" id="z3S-Lh-sIP"/>
+                        <segue destination="K01-ov-ILt" kind="show" identifier="TaskDetailView" id="TP7-Bl-YKe"/>
+                        <segue destination="b1Q-NN-9gu" kind="show" identifier="TaskAddView" id="z3S-Lh-sIP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bt5-aC-D07" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -430,7 +430,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xz5-Bj-mJT">
                                                 <rect key="frame" x="20" y="40" width="374" height="587"/>
                                                 <subviews>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="khG-HN-VO9">
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="khG-HN-VO9">
                                                         <rect key="frame" x="20" y="0.0" width="334" height="376"/>
                                                         <color key="tintColor" name="GreenPallete"/>
                                                     </datePicker>

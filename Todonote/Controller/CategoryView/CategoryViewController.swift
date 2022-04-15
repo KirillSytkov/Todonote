@@ -19,6 +19,7 @@ class CategoryViewController: UIViewController {
     //MARK: - vars/lets
     var categories: Results<Category>?
     let realm = try! Realm()
+    var viewModel = CategoryViewModel()
     
     //MARK: - lyfecycle
     override func viewDidLoad() {
@@ -26,7 +27,7 @@ class CategoryViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.searchBar.delegate = self
-        loadCategory()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,21 +36,14 @@ class CategoryViewController: UIViewController {
     }
     
     //MARK: - IBActions
-    @IBAction func textFieldUpdate(_ sender: UITextField) {
-        self.searchCategory(text: sender.text ?? "")
-    }
-    
+
     @IBAction func addPressed(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
         
         let alert = UIAlertController(title: "Add new Category", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add", style: .default) { action in
-            let newCategory = Category()
-            if let category = textField.text {
-                newCategory.title = category
-                self.saveCategory(category: newCategory)
-            }
+            self.viewModel.addButtonPressed(textField: textField)
         }
         
         alert.addTextField { alertTextField in
@@ -67,63 +61,29 @@ class CategoryViewController: UIViewController {
         topView.layer.cornerRadius = 20
     }
 
-    
-    private func saveCategory(category: Category) {
-        do {
-            try realm.write({
-                realm.add(category)
-            })
-        } catch {
-            debugPrint(error)
+    func bind() {
+        viewModel.reloadTableView = {
+            DispatchQueue.main.async { self.tableView.reloadData() }
         }
-        
-        self.tableView.reloadData()
+        viewModel.getCategory()
     }
-    
-    private func loadCategory() {
-        categories = realm.objects(Category.self)
-        self.tableView.reloadData()
-    }
-    
-    private func deleteCategory(category: Category) {
-        do {
-            try realm.write({
-                realm.delete(category)
-            })
-        } catch {
-            debugPrint(error)
-        }
-    }
-    private func searchCategory(text: String) {
-        if text.count != 0 {
-            categories = categories?.where({ categories in
-                categories.title.starts(with: text)
-            })
-        } else {
-            loadCategory()
-        }
-        self.tableView.reloadData()
-
-    }
-    
     
 }
 //MARK: - Extensions
 
 extension CategoryViewController: UITableViewDelegate,  UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return categories?.count ?? 0
         
+        return viewModel.numberOfCell
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as? CategoryTableViewCell else { return UITableViewCell() }
+        
+        let cellViewModel = viewModel.getCellViewModel(at: indexPath)
+        cell.taskLabel.text = cellViewModel.title
 
-        if let category = categories {
-            cell.configure(category: category[indexPath.row])
-        }
         return cell
     }
     
@@ -132,8 +92,8 @@ extension CategoryViewController: UITableViewDelegate,  UITableViewDataSource {
         guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "TasksViewController") as? TasksViewController
         else { return }
         
-        controller.selectedCategory = categories?[indexPath.row]
-        controller.categoryLabel = categories![indexPath.row].title
+        controller.selectedCategory = viewModel.categories?[indexPath.row]
+        controller.categoryLabel = viewModel.categories?[indexPath.row].title
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -142,24 +102,34 @@ extension CategoryViewController: UITableViewDelegate,  UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard let category = categories else { return }
-    
+        
         if editingStyle == .delete {
-            self.deleteCategory(category: category[indexPath.row])
+            viewModel.deleteCategory(indexPath: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+
+//    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+//        return false
+//    }
+//    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//        let movedObject = self.headlines[sourceIndexPath.row]
+//        headlines.remove(at: sourceIndexPath.row)
+//        headlines.insert(movedObject, at: destinationIndexPath.row)
+//    }
 }
 
 extension CategoryViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            searchCategory(text: searchText)
+        viewModel.searchCategory(text: searchText)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if searchBar.text?.count == 0 {
-            loadCategory()
-        }
+        viewModel.searchCategory(text: searchBar.text!)
         self.searchBar.endEditing(true)
     }
     
