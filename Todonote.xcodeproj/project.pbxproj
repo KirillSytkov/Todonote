@@ -20,6 +20,8 @@
 		497E063B28035623007B43D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497E063928035623007B43D3 /* LaunchScreen.storyboard */; };
 		497E0648280357E8007B43D3 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497E0647280357E8007B43D3 /* AddTaskViewController.swift */; };
 		497E064A280357FA007B43D3 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497E0649280357FA007B43D3 /* TaskDetailViewController.swift */; };
+		49B6B6D22809758700881BB1 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6B6D12809758700881BB1 /* Manager.swift */; };
+		49B6B6D52809784000881BB1 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6B6D42809784000881BB1 /* CategoryViewModel.swift */; };
 		49E00E322806DF31007F10B7 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E00E312806DF31007F10B7 /* TasksTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		497E063C28035623007B43D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		497E0647280357E8007B43D3 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		497E0649280357FA007B43D3 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		49B6B6D12809758700881BB1 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		49B6B6D42809784000881BB1 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		49E00E312806DF31007F10B7 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 		B6E1BC36F9F0E2FAD410DE52 /* Pods_Todonote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todonote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -67,6 +71,7 @@
 		4967A57B2805C48D0005C4C1 /* CategoryView */ = {
 			isa = PBXGroup;
 			children = (
+				49B6B6D32809782B00881BB1 /* ViewModel */,
 				497E063228035622007B43D3 /* CategoryViewController.swift */,
 				4967A5852805C56D0005C4C1 /* CategoryCell */,
 			);
@@ -127,6 +132,7 @@
 		497E062D28035622007B43D3 /* Todonote */ = {
 			isa = PBXGroup;
 			children = (
+				49B6B6CF2809753F00881BB1 /* Data */,
 				497E062E28035622007B43D3 /* AppDelegate.swift */,
 				497E063028035622007B43D3 /* SceneDelegate.swift */,
 				497E0644280356B1007B43D3 /* Model */,
@@ -165,6 +171,30 @@
 				492677C42805C77800A0278B /* Item.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		49B6B6CF2809753F00881BB1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				49B6B6D02809754500881BB1 /* Local */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		49B6B6D02809754500881BB1 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				49B6B6D12809758700881BB1 /* Manager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		49B6B6D32809782B00881BB1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				49B6B6D42809784000881BB1 /* CategoryViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		49E00E332806DF36007F10B7 /* TasksCell */ = {
@@ -303,10 +333,12 @@
 				497E0648280357E8007B43D3 /* AddTaskViewController.swift in Sources */,
 				497E062F28035622007B43D3 /* AppDelegate.swift in Sources */,
 				492677C52805C77800A0278B /* Item.swift in Sources */,
+				49B6B6D52809784000881BB1 /* CategoryViewModel.swift in Sources */,
 				497E063128035622007B43D3 /* SceneDelegate.swift in Sources */,
 				497E064A280357FA007B43D3 /* TaskDetailViewController.swift in Sources */,
 				49E00E322806DF31007F10B7 /* TasksTableViewCell.swift in Sources */,
 				493CA7B928042DEA00664895 /* TasksViewController.swift in Sources */,
+				49B6B6D22809758700881BB1 /* Manager.swift in Sources */,
 				4967A5842805C5690005C4C1 /* CategoryTableViewCell.swift in Sources */,
 				492677C32805C77300A0278B /* Category.swift in Sources */,
 			);
