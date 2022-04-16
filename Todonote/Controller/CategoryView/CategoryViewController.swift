@@ -12,8 +12,8 @@ class CategoryViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var bottonView: UIView!
+    @IBOutlet weak var plusButton: UIButton!
     
     //MARK: - vars/lets
     var viewModel = CategoryViewModel()
@@ -34,31 +34,46 @@ class CategoryViewController: UIViewController {
     
     //MARK: - IBActions
 
-    @IBAction func addPressed(_ sender: UIBarButtonItem) {
-        
+    @IBAction func addPressed(_ sender: UIButton) {
+        buttonAnimate(button: sender)
         var textField = UITextField()
         
         let alert = UIAlertController(title: "Add new Category", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Add", style: .default) { action in
+        let ok = UIAlertAction(title: "Add", style: .default) { action in
             self.viewModel.addButtonPressed(textField: textField)
         }
-        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addTextField { alertTextField in
-            alertTextField.placeholder = "Add some Category"
+            alertTextField.placeholder = "Category title..."
             textField = alertTextField
         }
         
-        alert.addAction(action)
+        alert.addAction(ok)
+        alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
         
     }
 
     //MARK: - flow func
     private func updateUI() {
-        topView.layer.cornerRadius = 20
+        plusButton.layer.cornerRadius = plusButton.frame.height / 2
+        bottonView.layer.cornerRadius = 20
+        tableView.layer.cornerRadius = 20
+        searchBar.searchTextField.backgroundColor = .white
+       
+    }
+    private func buttonAnimate(button: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear) {
+            UIView.modifyAnimations(withRepeatCount: 1, autoreverses: true) {
+                button.transform  = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            }
+        } completion: { _ in
+            button.transform  = CGAffineTransform(scaleX: 1, y: 1)
+        }
+
     }
 
-    func bind() {
+    private func bind() {
         viewModel.reloadTableView = {
             DispatchQueue.main.async { self.tableView.reloadData() }
         }
@@ -79,8 +94,7 @@ extension CategoryViewController: UITableViewDelegate,  UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as? CategoryTableViewCell else { return UITableViewCell() }
         
         let cellViewModel = viewModel.getCellViewModel(at: indexPath)
-        cell.taskLabel.text = cellViewModel.title
-
+        cell.configure(category: cellViewModel)
         return cell
     }
     
@@ -89,7 +103,7 @@ extension CategoryViewController: UITableViewDelegate,  UITableViewDataSource {
         guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "TasksViewController") as? TasksViewController
         else { return }
         
-        controller.selectedCategory = viewModel.categories?[indexPath.row]
+        controller.viewModel.selectedCategory = viewModel.categories?[indexPath.row]
         controller.categoryLabel = viewModel.categories?[indexPath.row].title
         self.navigationController?.pushViewController(controller, animated: true)
     }

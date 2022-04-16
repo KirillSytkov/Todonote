@@ -11,8 +11,8 @@ class CategoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var taskLabel: UILabel!
     
-    func configure(category: Category) {
+    func configure(category: CategoryCellViewModel) {
         taskLabel.text = category.title
     }
-    
+
 }

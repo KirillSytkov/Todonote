@@ -8,9 +8,9 @@
 import Foundation
 import RealmSwift
 
-class Item: Object {
+class Task: Object {
     @Persisted var title: String
     @Persisted var date: Date
     @Persisted var note: String
-    @Persisted(originProperty: "items") var parentCategory: LinkingObjects<Category>
+    @Persisted(originProperty: "tasks") var parentCategory: LinkingObjects<Category>
 }
