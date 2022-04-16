@@ -8,9 +8,9 @@
 import Foundation
 import RealmSwift
 
-class Manager {
+class CategoryManager {
     
-    static let shared = Manager()
+    static let shared = CategoryManager()
     let realm = try! Realm()
     
     private init() {}
