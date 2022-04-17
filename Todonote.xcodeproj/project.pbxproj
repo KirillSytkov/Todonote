@@ -151,12 +151,12 @@
 				497E062E28035622007B43D3 /* AppDelegate.swift */,
 				497E063028035622007B43D3 /* SceneDelegate.swift */,
 				490B6EEB280AFCA60009A3E9 /* Bindable.swift */,
+				499DC309280C309300F82F3D /* Constants.swift */,
 				497E0644280356B1007B43D3 /* Model */,
 				497E0643280356A2007B43D3 /* Controller */,
 				497E06422803569B007B43D3 /* View */,
 				497E063728035623007B43D3 /* Assets.xcassets */,
 				497E063C28035623007B43D3 /* Info.plist */,
-				499DC309280C309300F82F3D /* Constants.swift */,
 			);
 			path = Todonote;
 			sourceTree = "<group>";
