@@ -31,6 +31,10 @@ class CategoryViewController: UIViewController {
         super.viewWillAppear(animated)
         updateUI()
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.view.endEditing(true)
+    }
     
     //MARK: - IBActions
 
@@ -91,7 +95,7 @@ extension CategoryViewController: UITableViewDelegate,  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as? CategoryTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cells.categoryTableViewCell, for: indexPath) as? CategoryTableViewCell else { return UITableViewCell() }
         
         let cellViewModel = viewModel.getCellViewModel(at: indexPath)
         cell.configure(category: cellViewModel)
@@ -100,7 +104,7 @@ extension CategoryViewController: UITableViewDelegate,  UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "TasksViewController") as? TasksViewController
+        guard let controller = self.storyboard?.instantiateViewController(withIdentifier: Constants.taskViewController ) as? TasksViewController
         else { return }
         
         controller.viewModel.selectedCategory = viewModel.categories?[indexPath.row]
@@ -119,19 +123,6 @@ extension CategoryViewController: UITableViewDelegate,  UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
-    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        true
-    }
-
-//    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
-//        return false
-//    }
-//    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//        let movedObject = self.headlines[sourceIndexPath.row]
-//        headlines.remove(at: sourceIndexPath.row)
-//        headlines.insert(movedObject, at: destinationIndexPath.row)
-//    }
 }
 
 extension CategoryViewController: UISearchBarDelegate {

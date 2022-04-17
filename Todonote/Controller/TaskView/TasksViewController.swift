@@ -34,7 +34,7 @@ class TasksViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func addPressed(_ sender: UIBarButtonItem) {
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: "AddTaskViewController") as? AddTaskViewController else { return }
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: Constants.addTaskViewController) as? AddTaskViewController else { return }
         
         controller.viewModel.selectedCategory = viewModel.selectedCategory
         self.navigationController?.pushViewController(controller, animated: true)
@@ -46,6 +46,7 @@ class TasksViewController: UIViewController {
         tableView.layer.cornerRadius = 20
         categoryTitle.text = categoryLabel
     }
+    
     private func bind() {
         viewModel.reloadTableView = {
             DispatchQueue.main.async { self.tableView.reloadData() }
@@ -59,7 +60,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TasksTableViewCell", for: indexPath) as? TasksTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cells.tasksTableViewCell, for: indexPath) as? TasksTableViewCell else { return UITableViewCell() }
         
         let cellViewModel = viewModel.getCellViewModel(at: indexPath)
         
@@ -70,7 +71,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: "TaskDetailViewController") as? TaskDetailViewController else { return }
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: Constants.taskDetailViewController) as? TaskDetailViewController else { return }
         
         controller.viewModel.task = viewModel.tasks![indexPath.row]
         self.navigationController?.pushViewController(controller, animated: true)
