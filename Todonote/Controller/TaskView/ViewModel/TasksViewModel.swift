@@ -43,7 +43,7 @@ class TasksViewModel {
         return cellViewModel[indexPath.row]
     }
     
-    func createCell(tasks: Results<Task>? ) {
+    private func createCell(tasks: Results<Task>? ) {
         var viewModelCell = [TasksCellViewModel]()
         for task in tasks! {
             viewModelCell.append(TasksCellViewModel(taskTitle: task.title, taskDate: task.date))

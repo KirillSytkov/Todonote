@@ -10,7 +10,7 @@ import RealmSwift
 
 class CategoryViewModel {
     //MARK: - vars/lets
-    let realm = try! Realm()
+    private let realm = try! Realm()
     var categories: Results<Category>?
     private var cellViewModel = [CategoryCellViewModel]() {
         didSet {
@@ -26,7 +26,8 @@ class CategoryViewModel {
     //MARK: - flow func
     func getCategory() {
         CategoryManager.shared.loadCategory { categories in
-            self.createCell(categories: categories)
+            self.categories = categories
+            self.createCell()
         }
     }
     
@@ -38,7 +39,7 @@ class CategoryViewModel {
         } else {
             getCategory()
         }
-        self.createCell(categories: categories)
+        self.createCell()
         self.reloadTableView?()
         
     }
@@ -52,7 +53,7 @@ class CategoryViewModel {
             let newCategory = Category()
             newCategory.title = textField.text!
                 CategoryManager.shared.saveCategory(category: newCategory) {
-                    self.createCell(categories: self.categories)
+                    self.createCell()
             }
         }
     }
@@ -62,9 +63,7 @@ class CategoryViewModel {
         return cellViewModel[indexPath.row]
     }
     
-    func createCell(categories: Results<Category>? ) {
-        
-        self.categories = categories
+    private func createCell() {
         var viewModelCell = [CategoryCellViewModel]()
         for category in categories! {
             viewModelCell.append(CategoryCellViewModel(title: category.title))

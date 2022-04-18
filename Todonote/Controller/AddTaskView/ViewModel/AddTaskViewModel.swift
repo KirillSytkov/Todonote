@@ -11,7 +11,7 @@ import RealmSwift
 class AddTaskViewModel {
     //MARK: - vars/lets
     
-    let realm = try! Realm()
+    private let realm = try! Realm()
     var selectedCategory: Category?
     var task: Results<Task>?
     

@@ -15,9 +15,8 @@ class TaskDetailViewModel {
     var date = Bindable<Date?>(nil)
     var note = Bindable<String?>(nil)
     
-    let realm = try! Realm()
+    private let realm = try! Realm()
     var task: Task?
-    var selectedCategory: Category?
     
     func updatePressed(title: UITextField, date: UIDatePicker, note: UITextField){
         
